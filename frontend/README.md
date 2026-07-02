@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# Frontend — KoinX Tax Loss Harvesting
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This folder contains the React + TypeScript frontend for the tax-loss harvesting assignment.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Pre-harvesting and after-harvesting capital gains cards
+- Holdings table with row and select-all selection
+- Loading, empty, and error states
+- Dark/light theme support
+- Responsive layout for mobile and desktop
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+By default, the app expects the mock backend at http://localhost:4000. The Vite dev server proxies /api requests to that backend automatically.
+
+## Production build
+
+```bash
+npm run build
+```
+
+## Environment variables
+
+If you want to point the frontend to a deployed backend instead of the local mock API, create a .env file in this folder:
+
+```env
+VITE_API_BASE_URL=https://your-backend-url/api
+```
+
+## Project structure
+
+```text
+src/
+├── api/           API client helpers
+├── components/    Reusable UI components
+├── hooks/         Data and selection state hooks
+├── types/         TypeScript models
+└── utils/         Formatting and calculation helpers
+```
+
+## Screenshots
+
+Add screenshots for the desktop dashboard, mobile holdings view, and dark mode here once you have deployed the app.
