@@ -40,3 +40,5 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`KoinX mock API server running on http://localhost:${PORT}`);
 });
+
+export default app;
